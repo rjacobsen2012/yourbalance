@@ -1,0 +1,52 @@
+
+//------------------------------//
+//            Layout            //
+//------------------------------//
+
+@mixin overlay($top: 0, $right: 0, $bottom: 0, $left: 0) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    overflow: hidden;
+}
+
+
+//------------------------------//
+//            Type              //
+//------------------------------//
+
+@mixin color-yiq($bgColor, $prop: 'color') {
+    #{$prop}: color-yiq($color);
+}
+
+@mixin large-copy {
+    font-size: 1.5em;
+    line-height: 1.6;
+}
+
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 1px);
+}
+
+@mixin text-shadow($color: transparentize($text-color, 0.8)) {
+    text-shadow: 0 3px 5px $color;
+}
+
+@mixin font-smooth {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin font-smooth-reset {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+}
+
+@mixin box-shadow($color: transparentize($black, 0.8), $y: 4px, $spread: 22px, $offset: -5px) {
+    box-shadow: 0 $y $spread $offset $color;
+}

@@ -1,0 +1,151 @@
+//------------------------------//
+//     Page element sizes       //
+//------------------------------//
+
+$top-nav-height: 3rem;
+
+
+//------------------------------//
+//          Typefaces           //
+//------------------------------//
+
+$sans-serif:        Helvetica, 'Varela Round', sans-serif;
+$serif:             Georgia, Garamond, serif;
+
+$font:              'Varela Round';
+$plex:              'ibm-plex-sans', 'IBM Plex Sans';
+
+$heading:           $plex, $sans-serif;
+$body:              $font, $sans-serif;
+// $alternate:         $overpass, $heading;
+
+//$font-family-sans-serif: $font, sans-serif;
+
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+//$headings-font-family: "IBM Plex Sans", sans-serif;
+$headings-font-weight: 800;
+
+$font-size-base:    0.9rem;
+$line-height-base:  1.6;
+
+$xs-text:           0.20em;
+$small-text:        0.5em;
+$normal-text:       0.75em;
+$medium-text:       1.125em;
+$large-text:        1.325em;
+$xl-text:           1.7em;
+
+
+//------------------------------//
+//            Colors            //
+//------------------------------//
+
+$black:             #000000;
+$white:             #ffffff;
+
+$lightest-grey:     #f1f6fd;
+$lighter-grey:      #e1ebf6;
+$light-grey:        #b6c3d2;
+$grey:              #8590a0;
+$dark-grey:         #333333;
+
+$indigo:            #6574cd;
+$purple:            #793ef0;
+$pink:              #f66D9b;
+$red:               #e3342f;
+$orange:            #ff9800;
+$yellow:            #ffed4a;
+$green:             #03a156;
+$teal:              #4dc0b5;
+$cyan:              #6cb2eb;
+
+$lightest-blue:     #e0e9f6;
+$light-blue:        #d9e1ed;
+$lighter-blue:      #88afe7;
+$blue:              #3e79f0;
+$blue-grey:         #5d7695;
+$med-blue:          #3967a6;
+$dark-blue:         #192b4e;
+$darker-blue:       #182c47;
+$baby-blue:         #00a8ff;
+$link-blue:         #3490dc;
+
+$dark-green:        #12833c;
+
+// ======== Site Colors ======== //
+$site-light:                rgb(254, 1, 129);
+$site-dark:                 rgb(100, 5, 113);
+$site--primary:             rgb(254, 1, 129);
+$site--primary-dark:        rgb(209, 0, 105);
+$site--primary-70:          rgba(254, 1, 129, 0.7);
+$site--primary-50:          rgba(254, 1, 129, 0.5);
+$site--primary-30:          rgba(254, 1, 129, 0.3);
+$site--primary-10:          rgba(254, 1, 129, 0.1);
+$site--logo:                #430051;
+$site--sidebar-icon:        #db34de;
+$site--bottom:              #3c4655;
+
+//------------------------------//
+//     Bootstrap settings       //
+//------------------------------//
+
+$primary:           #0054fe;
+$info:              $white;
+$secondary:         #dbe5fa;
+$success:           $dark-green;
+$danger:            $red;
+
+$text-color:        $darker-blue;
+
+// Body
+$body-bg:           $lightest-grey;
+$body-color:        $darker-blue;
+
+$border-color:      $lightest-blue;
+
+// Links
+$link-color:        $blue;
+
+// Cards
+$card-border-color: $border-color;
+
+// Forms
+$input-border-color: $border-color;
+$input-btn-focus-box-shadow: none;
+
+// Overlays
+$overlay-bg: $blue;
+$overlay-opacity: 0.125;
+
+// Select
+$vs-border-color: $border-color;
+$vs-controls-color: darken($border-color, 8%);
+
+// Animations
+$animationDuration: .3s;
+
+// Buttons
+$btn-focus-box-shadow: 0 0 0 0.2rem $primary;
+
+// Nav
+$navbar-dark-color: $white;
+
+// Forms
+$input-border-color: $lighter-grey;
+$input-btn-focus-box-shadow: none;
+
+// Overlays
+$overlay-bg:        $blue;
+$overlay-opacity:   0.125;
+
+
+//------------------------------//
+//        Easing helpers        //
+//------------------------------//
+
+$ease-in-cube:              cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$ease-out-cube:             cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-in-out-cube:          cubic-bezier(0.645, 0.045, 0.355, 1);
+
