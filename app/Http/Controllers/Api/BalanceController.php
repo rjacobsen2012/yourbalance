@@ -22,7 +22,7 @@ class BalanceController extends Controller
         /** @var User $user */
         $user = auth()->user();
 
-        $perPage = $request->get('perPage') ?: 10;
+        $perPage = $request->get('perPage') ?: 100;
 
         /** @var Collection $balances */
         $balances = $user->balances()->with(['label'])->paginate($perPage);
