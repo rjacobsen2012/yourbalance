@@ -7,7 +7,7 @@
                         <img src="/images/yourbalance-1-default@logo.png" width="24"/>
                     </div>
                     <div class="app-logo-text">
-                        <inertia-link v-if="!pageEquals('guest')" href="/">
+                        <inertia-link v-if="!pageEquals('guest')" class="logo-link" href="/">
                             <span class="logo-a">{{ logoA }}</span><span class="logo-b">{{ logoB }}</span>
                         </inertia-link>
                         <span v-else>

@@ -7,6 +7,8 @@
 /public/mix-manifest.json
 /public/*.js
 /storage/*.key
+/storage/logs/*
+/storage/framework/*
 /vendor
 /.idea
 /.vagrant
