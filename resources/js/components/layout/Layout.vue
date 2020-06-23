@@ -31,11 +31,11 @@
         </b-navbar>
 
         <div class="layout-box">
-            <div class="inner-layout-box">
+            <b-container fluid class="pl-0 pr-0">
                 <div class="content" :style="contentStyles">
                     <slot />
                 </div>
-            </div>
+            </b-container>
         </div>
         <loading-overlay :visible="isloading" :opacity="0.3"/>
     </div>

@@ -1,6 +1,6 @@
 <template>
     <layout title="Your Balances">
-        <b-container fluid class="header-balance">
+        <div class="header-balance">
             <b-row class="header-content">
                 <div class="left-header-content">
                     Your Balance
@@ -24,16 +24,14 @@
                     </span>
                 </div>
             </b-row>
-        </b-container>
+        </div>
         <balance-days :balances="balances" :days="days"/>
-        <b-container class="pagination">
-            <b-row>
-                <pagination :data="balances" :limit="2" @pagination-change-page="getBalances">
-                    <span slot="prev-nav">&lt; Previous</span>
-                    <span slot="next-nav">Next &gt;</span>
-                </pagination>
-            </b-row>
-        </b-container>
+        <div class="pagination">
+            <pagination :data="balances" :limit="2" @pagination-change-page="getBalances">
+                <span slot="prev-nav">&lt; Previous</span>
+                <span slot="next-nav">Next &gt;</span>
+            </pagination>
+        </div>
         <b-modal id="balance-modal" header-bg-variant="info" body-bg-variant="info" hide-footer>
             <template v-slot:modal-title size="sm">Add Balance Entry</template>
             <div class="balance-modal-content">
@@ -248,9 +246,10 @@
 
     .pagination {
         width: 100%;
-        flex: 1;
-        padding: 1.1rem 10rem 0.8rem 10rem;
-        min-width: 50rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
 
     .balance-modal-content {
