@@ -111,7 +111,7 @@
         data() {
             return {
                 balances: {},
-                perPageAmount: 10,
+                perPageAmount: 100,
                 days: {},
                 total_balance: 0,
                 loadedPage: 1,
