@@ -3,7 +3,7 @@
         <b-row v-for="day in days" :key="day" class="days pb-4">
             <b-container>
                 <b-row>
-                    <div class="day-row pb-2">
+                    <div class="day-row">
                         <span v-if="dayIsToday(day)" class="date-header">TODAY</span>
                         <span v-if="dayIsYesterday(day)" class="date-header">YESTERDAY</span>
                         <span v-if="dayIsNotTodayOrYesterday(day)" class="date-header">
@@ -98,6 +98,7 @@
                 flex-direction: row;
                 justify-content: space-between;
                 width: 100%;
+                padding-bottom: 0.6rem;
 
                 .date-header {
                     font-size: $xs-text;

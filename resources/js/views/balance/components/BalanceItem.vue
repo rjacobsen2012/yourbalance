@@ -208,6 +208,7 @@
 
                 .balance-label {
                     color: $black;
+                    font-weight: 500;
                 }
 
                 .balance-date {
