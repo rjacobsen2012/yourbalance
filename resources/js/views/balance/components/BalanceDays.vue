@@ -1,5 +1,5 @@
 <template>
-    <b-container fluid class="balance-info">
+    <div class="balance-info">
         <b-row v-for="day in days" :key="day" class="days pb-4">
             <b-container>
                 <b-row>
@@ -7,8 +7,8 @@
                         <span v-if="dayIsToday(day)" class="date-header">TODAY</span>
                         <span v-if="dayIsYesterday(day)" class="date-header">YESTERDAY</span>
                         <span v-if="dayIsNotTodayOrYesterday(day)" class="date-header">
-                            {{ $moment(day).format('ddd, D MMM').toUpperCase() }}
-                        </span>
+                        {{ $moment(day).format('ddd, D MMM').toUpperCase() }}
+                    </span>
                         <div :class="['sum', isTodayOrPositive(day) ? 'today' : 'not-today']">
                             <span v-if="!isNegative(sumToday(day))">+</span><span class="whole-amount">{{ wholeAmount(formattedSum(day)) }}</span><span class="cents">.{{ cents(formattedSum(day)) }}</span>
                         </div>
@@ -17,7 +17,7 @@
                 <balance-items :balances="getDayBalances(day)"/>
             </b-container>
         </b-row>
-    </b-container>
+    </div>
 </template>
 
 <script>
@@ -87,7 +87,6 @@
         padding-left: 10rem;
         padding-right: 10rem;
         padding-top: 2rem;
-        min-width: 50rem;
 
         .days {
             font-size: $normal-text;
@@ -107,10 +106,12 @@
 
             .today {
                 color: $green;
+                font-weight: 400;
             }
 
             .not-today {
                 color: $light-grey;
+                font-weight: 400;
             }
         }
     }

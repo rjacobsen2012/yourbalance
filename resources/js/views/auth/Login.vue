@@ -1,28 +1,25 @@
 <template>
     <guest-layout title="Login">
-        <b-card class="shadow-sm m-4 login-form">
-            <b-form @submit.prevent="login">
-                <b-form-group model="email" :errors="errors">
-                    <b-form-input v-model.trim="form.email" type="text" placeholder="Email Address" />
-                </b-form-group>
+        <div class="guest-container">
+            <b-card class="shadow-sm m-4 login-form">
+                <b-form @submit.prevent="login">
+                    <b-form-group model="email" :errors="errors">
+                        <b-form-input class="custom-input" v-model.trim="form.email" type="text" placeholder="Email Address" />
+                    </b-form-group>
 
-                <b-form-group model="password" :errors="errors">
-                    <b-form-input v-model="form.password" type="password" placeholder="Password" />
-                </b-form-group>
+                    <b-form-group model="password" :errors="errors">
+                        <b-form-input class="custom-input" v-model="form.password" type="password" placeholder="Password" />
+                    </b-form-group>
 
-                <div class="row">
-                    <div class="col">
-                        <b-checkbox v-model="form.remember" :unchecked-value="null">Remember Me</b-checkbox>
+                    <div class="login-actions-holder">
+                        <div class="login-actions">
+                            <b-checkbox class="custom-input" v-model="form.remember" :unchecked-value="null">Remember Me</b-checkbox>
+                            <b-button @click="triggerLoader" class="custom-btn" variant="primary" type="submit">LOGIN</b-button>
+                        </div>
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <b-button @click="triggerLoader" variant="primary" type="submit">Login</b-button>
-                    </div>
-                </div>
-            </b-form>
-        </b-card>
+                </b-form>
+            </b-card>
+        </div>
     </guest-layout>
 </template>
 
@@ -75,17 +72,18 @@
 
 <style lang="scss" scoped>
     .login-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        width: 20rem;
+    }
 
+    .login-actions-holder {
+        display: flex;
         width: 100%;
 
-        .container {
-            max-width: 600px;
-            width: 100%;
-            margin: auto;
-            padding: 1rem;
+        .login-actions {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-grow: 1;
         }
     }
 </style>

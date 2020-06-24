@@ -1,8 +1,8 @@
 <template>
     <b-card no-body class="balance-card mb-2">
-        <b-card-text class="p-1 mb-0">
+        <b-card-text class="p-0 mb-0">
             <div class="balance-holder" @mouseover="hover" @mouseleave="unHover">
-                <div class="balance-label-info pl-2">
+                <div class="balance-label-info">
                     <div class="balance-label">{{ balance.label.name }}</div>
                     <div class="balance-date">{{ balanceDate }}</div>
                 </div>
@@ -203,6 +203,8 @@
             .balance-label-info {
                 display: flex;
                 flex-direction: column;
+                line-height: 1rem;
+                padding-left: 0.7rem;
 
                 .balance-label {
                     color: $black;
@@ -211,11 +213,13 @@
                 .balance-date {
                     color: lighten($grey, 20%);
                     font-size: $xs-text;
+                    line-height: 0.6rem;
                 }
             }
 
             .balance-amount {
                 width: 11rem;
+                padding-right: 0.28rem;
 
                 display: flex;
                 flex-direction: row;
@@ -224,10 +228,12 @@
 
                 .negative-balance {
                     color: $black;
+                    font-weight: 400;
                 }
 
                 .positive-balance {
                     color: $green;
+                    font-weight: 400;
                 }
 
                 .balance-link {

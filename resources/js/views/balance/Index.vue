@@ -2,34 +2,40 @@
     <layout title="Your Balances">
         <div class="header-balance">
             <b-row class="header-content">
-                <div class="left-header-content">
-                    Your Balance
-                    <b-button size="sm" variant="primary" class="add-entry ml-2 mb-1" @click="openAddModal">
-                        <div class="button-content">
-                            <icon name="plus" class="icon" width="10" height="10"/>
-                            <span class="pl-2">ADD ENTRY</span>
+                <b-container>
+                    <b-row>
+                        <div class="header-row">
+                            <div class="left-header-content">
+                                <span class="main-text">Your Balance</span>
+                                <b-button size="sm" variant="primary" class="add-entry" @click="openAddModal">
+                                    <div class="button-content">
+                                        <icon name="plus" class="icon" width="10" height="10"/>
+                                        <span class="import-text">ADD ENTRY</span>
+                                    </div>
+                                </b-button>
+                                <b-button size="sm" variant="primary" class="add-entry-b">
+                                    <div class="button-content">
+                                        <img src="/images/upload.png" class="upload-image"/>
+                                        <span class="import-text">IMPORT CSV</span>
+                                    </div>
+                                </b-button>
+                            </div>
+                            <div class="right-header-content">
+                                <span class="total-balance-title">TOTAL BALANCE</span>
+                                <span class="total-balance">
+                                <span class="whole-amount">{{ wholeAmount(formattedAmount(parseFloat(total_balance))) }}</span><span class="cents">.{{ cents(formattedAmount(parseFloat(total_balance))) }}</span>
+                            </span>
+                            </div>
                         </div>
-                    </b-button>
-                    <b-button size="sm" variant="primary" class="add-entry ml-2 mb-1">
-                        <div class="button-content">
-                            <icon name="plus" class="icon" width="10" height="10"/>
-                            <span class="pl-2">IMPORT CSV</span>
-                        </div>
-                    </b-button>
-                </div>
-                <div class="right-header-content">
-                    <span class="total-balance-title">TOTAL BALANCE</span>
-                    <span class="total-balance">
-                        <span class="whole-amount">{{ wholeAmount(formattedAmount(parseFloat(total_balance))) }}</span><span class="cents">.{{ cents(formattedAmount(parseFloat(total_balance))) }}</span>
-                    </span>
-                </div>
+                    </b-row>
+                </b-container>
             </b-row>
         </div>
         <balance-days :balances="balances" :days="days"/>
-        <div class="pagination">
+        <div class="pagination-holder">
             <pagination :data="balances" :limit="2" @pagination-change-page="getBalances">
-                <span slot="prev-nav">&lt; Previous</span>
-                <span slot="next-nav">Next &gt;</span>
+                <span slot="prev-nav">PREV</span>
+                <span slot="next-nav">NEXT</span>
             </pagination>
         </div>
         <b-modal id="balance-modal" header-bg-variant="info" body-bg-variant="info" hide-footer>
@@ -191,12 +197,11 @@
 <style lang="scss" scoped>
     @import '~sass/helpers';
     .header-balance {
-        width: 100%;
         background-color: $dark-blue;
         color: $white;
+
         flex: 1;
-        padding: 1.1rem 10rem 0.8rem 10rem;
-        min-width: 50rem;
+        padding: 1rem 10rem;
 
         .header-content {
             display: flex;
@@ -204,52 +209,97 @@
             justify-content: space-between;
             align-items: center;
 
-            .left-header-content {
-                .add-entry {
-                    font-size: $xs-text;
-                }
+            .header-row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding-top: 0.2rem;
+                padding-bottom: 0.1rem;
 
-                .icon {
-                    font-size: $xs-text;
-                }
-
-                .button-content {
+                .left-header-content {
                     display: flex;
                     flex-direction: row;
-                    justify-content: space-evenly;
-                    align-items: center;
-                    font-size: $xs-text;
+                    justify-content: center;
+
+                    .main-text {
+                        font-size: 12pt;
+                    }
+
+                    .add-entry {
+                        font-size: $xs-text;
+                        margin-left: 0.6rem;
+                        padding: 0 0.5rem 0 0.20rem;
+                        height: 1.4rem;
+                    }
+
+                    .add-entry-b {
+                        font-size: $xs-text;
+                        margin-left: 0.8rem;
+                        padding: 0 0.5rem 0 0.2rem;
+                        height: 1.4rem;
+                    }
+
+                    .icon {
+                        font-size: $xs-text;
+                    }
+
+                    .button-content {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-evenly;
+                        align-items: center;
+                        font-size: 5.5pt;
+                        padding-left: 0.1rem;
+                        /*padding-top: 1px;*/
+
+                        .upload-image {
+                            width: 0.8rem;
+                            height: 0.8rem;
+                        }
+
+                        .import-text {
+                            padding-left: 0.3rem;
+                            padding-top: 0.1rem;
+                        }
+                    }
                 }
-            }
 
-            .right-header-content {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-end;
+                .right-header-content {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    padding-right: 0.8rem;
 
-                .total-balance-title {
-                    font-size: $xs-text;
-                    color: lighten($grey, 5%);
-                }
+                    .total-balance-title {
+                        font-size: $xs-text;
+                        color: lighten($grey, 5%);
+                    }
 
-                .total-balance {
-                    color: $green;
-                    font-size: $xl-text;
+                    .total-balance {
+                        line-height: 1.5rem;
+                        color: $green;
+                        font-size: 15pt;
+                        font-weight: 200;
 
-                    .cents {
-                        font-size: $small-text;
+                        .cents {
+                            font-size: $small-text;
+                        }
                     }
                 }
             }
         }
     }
 
-    .pagination {
+    .pagination-holder {
         width: 100%;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        font-size: 7pt !important;
+        font-weight: bold;
     }
 
     .balance-modal-content {

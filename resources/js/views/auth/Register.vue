@@ -1,35 +1,37 @@
 <template>
     <guest-layout title="Register">
-        <b-card class="shadow-sm m-4 register-form">
-            <b-form @submit.prevent="register">
-                <b-form-group model="first_name" :errors="errors">
-                    <b-form-input v-model.trim="form.first_name" type="text" placeholder="First Name" />
-                </b-form-group>
+        <div class="guest-container">
+            <b-card class="shadow-sm m-4 register-form">
+                <b-form @submit.prevent="register">
+                    <b-form-group model="first_name" :errors="errors">
+                        <b-form-input class="custom-input" size="sm" v-model.trim="form.first_name" type="text" placeholder="First Name" />
+                    </b-form-group>
 
-                <b-form-group model="last_name" :errors="errors">
-                    <b-form-input v-model.trim="form.last_name" type="text" placeholder="Last Name" />
-                </b-form-group>
+                    <b-form-group model="last_name" :errors="errors">
+                        <b-form-input class="custom-input" size="sm" v-model.trim="form.last_name" type="text" placeholder="Last Name" />
+                    </b-form-group>
 
-                <b-form-group model="email" :errors="errors">
-                    <b-form-input v-model.trim="form.email" type="text" placeholder="Email Address" />
-                </b-form-group>
+                    <b-form-group model="email" :errors="errors">
+                        <b-form-input class="custom-input" size="sm" v-model.trim="form.email" type="text" placeholder="Email Address" />
+                    </b-form-group>
 
-                <b-form-group model="password" :errors="errors">
-                    <b-form-input v-model="form.password" type="password" placeholder="Password" />
-                </b-form-group>
+                    <b-form-group model="password" :errors="errors">
+                        <b-form-input class="custom-input" size="sm" v-model="form.password" type="password" placeholder="Password" />
+                    </b-form-group>
 
-                <b-form-group model="password_confirmation" :errors="errors">
-                    <b-form-input v-model="form.password_confirmation" type="password" placeholder="Confirm Password" />
-                </b-form-group>
+                    <b-form-group model="password_confirmation" :errors="errors">
+                        <b-form-input class="custom-input" size="sm" v-model="form.password_confirmation" type="password" placeholder="Confirm Password" />
+                    </b-form-group>
 
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col text-right">
-                        <b-button @click="triggerLoader" variant="primary" type="submit">Register</b-button>
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col text-right">
+                            <b-button @click="triggerLoader" class="custom-btn" variant="primary" type="submit">REGISTER</b-button>
+                        </div>
                     </div>
-                </div>
-            </b-form>
-        </b-card>
+                </b-form>
+            </b-card>
+        </div>
     </guest-layout>
 </template>
 
@@ -81,17 +83,6 @@
 
 <style lang="scss" scoped>
     .register-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        width: 100%;
-
-        .container {
-            max-width: 600px;
-            width: 100%;
-            margin: auto;
-            padding: 1rem;
-        }
+        width: 20rem;
     }
 </style>
