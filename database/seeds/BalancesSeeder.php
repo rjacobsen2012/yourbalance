@@ -16,7 +16,7 @@ class BalancesSeeder extends Seeder
         foreach (User::all() as $user) {
             factory(Balance::class)->create(['date' => \Carbon\Carbon::today(), 'user_id' => $user->id]);
             factory(Balance::class, 2)->create(['date' => \Carbon\Carbon::yesterday(), 'user_id' => $user->id]);
-            factory(Balance::class, 50)->create(['user_id' => $user->id]);
+            factory(Balance::class, 150)->create(['user_id' => $user->id]);
         }
     }
 }
