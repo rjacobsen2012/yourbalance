@@ -20,7 +20,7 @@
             <b-navbar-nav class="ml-auto notifications" type="light" variant="light">
                 <b-nav-item-dropdown right>
                     <template slot="button-content">
-                        <img :src="`https://secure.gravatar.com/avatar/${gravatar}?size=20`" class="user-gravatar rounded-full w-8 h-8 mr-3"/>{{ $user.name }}
+                        <span class="notification-icon-holder"><font-awesome-icon icon="bell" class="notification-icon"/></span><img :src="`https://secure.gravatar.com/avatar/${gravatar}?size=20`" class="user-gravatar rounded-full w-8 h-8"/><span class="user-name">{{ $user.name }}</span>
                     </template>
 
                     <b-dropdown-item @click.prevent="logout">
@@ -239,11 +239,24 @@
                 font-weight: bold;
             }
         }
+
+        .user-name {
+            color: darken($grey, 2%) !important;
+            font-weight: 500 !important;
+            font-size: 6.5pt;
+        }
+    }
+
+    .notification-icon-holder {
+        padding-right: 0.6rem;
+        color: lighten($grey, 4%);
+        font-size: 7pt;
     }
 
     .user-gravatar {
         border-radius: 50%;
         @include box-shadow;
+        margin-right: 0.6rem;
     }
 
     .home {

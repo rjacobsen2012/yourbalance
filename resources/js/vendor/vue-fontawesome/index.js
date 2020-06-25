@@ -15,6 +15,7 @@ import {
     faSave,
     faQuestionCircle,
     faUpload,
+    faBell,
 }     from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon, FontAwesomeLayers, FontAwesomeLayersText} from '@fortawesome/vue-fontawesome'
 import Vue from "vue";
@@ -35,6 +36,7 @@ library.add(
     faSave,
     faQuestionCircle,
     faUpload,
+    faBell,
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)

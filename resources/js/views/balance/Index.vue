@@ -252,7 +252,6 @@
                         align-items: center;
                         font-size: 5.5pt;
                         padding-left: 0.1rem;
-                        /*padding-top: 1px;*/
 
                         .upload-image {
                             width: 0.8rem;
