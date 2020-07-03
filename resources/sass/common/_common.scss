@@ -1,0 +1,286 @@
+blockquote {
+    color: $grey;
+    padding-left: 1.5rem;
+    border-left: 3px solid $grey;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.overflow-visible {
+    overflow: visible !important;
+}
+
+.text-red {
+    color: $red;
+}
+
+.top-nav {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 2.5rem;
+    z-index: 10;
+    font-size: $small-text;
+}
+
+.layout-box {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: calc(100vh - 3.5rem);
+    background-color: #f5f6fa;
+
+    .inner-layout-box {
+        flex: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar {
+        background-image: -webkit-gradient(
+                linear,
+                left bottom,
+                left top,
+                from($site--primary),
+                to($site--bottom)
+        );
+
+        background-image: linear-gradient(0deg, $site--primary, $site-dark);
+
+        position: relative;
+        min-width: 2rem;
+        .sidebar-links {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            li:not(:first-child) {
+                border-top: 1px solid $site--sidebar-icon;
+            }
+            li {
+                height: 2.4rem;
+                text-align: center;
+                &.active {
+                    a {
+                        color: darken($white, 20%);
+                    }
+                    background-color: transparent;
+                }
+                &:not(.active):hover {
+                    background-color: transparent;
+                }
+                a {
+                    color: #c0cbd8;
+                    display: block;
+                    font-size: $normal-text;
+                    padding-top: .3rem;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .create {
+        color: lighten($green, 10%);
+    }
+}
+
+.content-flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.content-flex-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.content-flex-row-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-align-right {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 0.2rem;
+}
+
+.form-field {
+    width: 60%;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.sources-card {
+    font-size: $small-text;
+}
+
+.editor-btn-toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    .btn {
+        padding: 0;
+    }
+
+    .btn:not(:first-child) {
+        padding-left: 0.2rem;
+    }
+}
+
+.bg-success-light {
+    background-color: lighten($green, 20%);
+}
+
+.bg-danger-light {
+    background-color: lighten($red, 30%);
+}
+
+.bg-primary-light {
+    background-color: lighten($primary, 30%);
+}
+
+.datepicker-date {
+    display: flex;
+    flex-direction: row;
+
+    div.vdatetime {
+        display: flex;
+        flex-grow: 1;
+
+        input {
+            display: flex;
+            flex-grow: 1;
+        }
+    }
+}
+
+.faq {
+    font-size: $small-text;
+}
+
+.vbt-autcomplete-list {
+    margin-top: 1.7rem;
+}
+
+.cents {
+    font-size: 6pt;
+}
+
+.sum {
+    padding-right: 0.85rem;
+}
+
+.date-field {
+    font-size: $xs-text !important;
+    height: 1.83rem !important;
+}
+
+.editor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: $xs-text;
+
+    .field-editor {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 30%;
+
+        .input-group-text {
+            background-color: transparent;
+            padding: 0 0 0 0.6rem;
+            border-right: none;
+            font-size: $xs-text !important;
+            color: lighten($grey, 5%);
+        }
+    }
+
+    .label-field {
+        height: 1.8rem;
+        font-size: $xs-text !important;
+    }
+
+    .amount-field {
+        height: 1.8rem;
+        border-left: none;
+        font-size: $xs-text !important;
+    }
+
+    .field-label {
+        padding-bottom: 0.3rem;
+    }
+}
+
+.editor-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: $xs-text;
+
+    .editor-button {
+        font-size: $xs-text !important;
+    }
+}
+
+.modal-body {
+    padding: 0 !important;
+}
+
+
+
+.app-logo-text {
+    font-size: $normal-text;
+    padding-top: 0.3rem;
+    padding-left: 0.4rem;
+}
+
+.form-control:focus {
+    border-color: #e1ebf6 !important;
+}
+
+.guest-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.custom-btn {
+    font-size: 6pt;
+}
+
+.form-control {
+    font-size: 7pt !important;
+}
+
+.custom-control-input {
+    width: 0.5rem !important;
+    height: 0.5rem !important;
+}
+
+.custom-control-label {
+    font-size: 7pt !important;
+    padding-top: 0.25rem;
+}

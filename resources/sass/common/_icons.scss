@@ -1,0 +1,21 @@
+.pen-icon-bg {
+    color: darken($green, 50%);
+}
+
+.pen-icon {
+    color: lawngreen;
+}
+
+.source-icon {
+    color: purple;
+}
+
+.icon-text {
+    color: black;
+    @include text-shadow;
+}
+
+.button-icon-disabled {
+    opacity: 0.4;
+}
+

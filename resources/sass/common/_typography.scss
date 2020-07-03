@@ -1,0 +1,19 @@
+@import '~bootstrap/scss/variables';
+
+.text-xxl { @include font-size($h2-font-size); }
+.text-xl { @include font-size($h3-font-size); }
+.text-lg { @include font-size($h4-font-size); }
+.text-md { @include font-size($h5-font-size); }
+.text-sm { font-size: .8rem; }
+.text-xs { font-size: .6rem; }
+
+.font-normal {
+    font-weight: 500;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-black-30 { color: rgba($black, .3) !important; }
+.text-white-30 { color: rgba($white, .3) !important; }

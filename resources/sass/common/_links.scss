@@ -1,0 +1,50 @@
+.date-link {
+    cursor: pointer;
+}
+
+.icon-link {
+    cursor: pointer;
+}
+
+.btn {
+    &.plain {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.btn:hover {
+    &.plain {
+        text-decoration: none;
+        color: darken(white, 10%);
+    }
+}
+
+a.logo-link:link {
+    color: $black;
+    text-decoration: none;
+}
+
+a.logo-link:visited {
+    color: $black;
+    text-decoration: none;
+}
+
+a.logo-link:hover {
+    color: $black;
+    text-decoration: none;
+}
+
+a.logo-link:active {
+    color: $black;
+    text-decoration: none;
+}
+
+.loga-a {
+    color: $black;
+}
+
+.logo-b {
+    color: #0f5efe;
+}
+
